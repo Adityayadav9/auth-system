@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3000;
 // 2. Enable CORS for Vite frontend
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://127.0.0.1:5173"],
+    origin: ["http://localhost:5173", "https://auth-system-pc1x.vercel.app", "http://127.0.0.1:5173"],
     credentials: true,
   })
 );
