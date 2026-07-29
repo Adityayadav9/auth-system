@@ -38,7 +38,7 @@ const Register = () => {
 
   try {
     // 👈 WRITE IT HERE inside the try block
-    const res = await axios.post("http://localhost:3000/api/auth/send-otp", {
+    const res = await axios.post("https://auth-system-grxw.vercel.app/api/auth/send-otp", {
       email: formData.email.trim(),
     });
 

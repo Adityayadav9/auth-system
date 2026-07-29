@@ -39,7 +39,7 @@ export default function ForgotPassword() {
     setMessage('');
 
     try {
-      const res = await axios.post('http://localhost:3000/api/auth/forgot-password', { email });
+      const res = await axios.post('https://auth-system-grxw.vercel.app/api/auth/forgot-password', { email });
       
       // Successfully sent OTP
       setMessage(res.data.message || 'OTP sent successfully!');
@@ -68,7 +68,7 @@ export default function ForgotPassword() {
     setMessage('');
 
     try {
-      const res = await axios.post('http://localhost:3000/api/auth/reset-password', {
+      const res = await axios.post('https://auth-system-grxw.vercel.app/api/auth/reset-password', {
         email,
         otp,
         newPassword,
