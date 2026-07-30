@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'pf8e.vercel.apphttps://auth-system-', // Points to your backend PORT=3000
+        target: 'i3cx.vercel.apphttps://auth-system-', // Points to your backend PORT=3000
         changeOrigin: true,
         secure: false,
       },

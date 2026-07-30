@@ -38,7 +38,7 @@ const Register = () => {
 
   try {
     // 👈 WRITE IT HERE inside the try block
-    const res = await axios.post("https://auth-system-pf8e.vercel.app/api/auth/send-otp", {
+    const res = await axios.post("https://auth-system-i3cx.vercel.app/api/auth/send-otp", {
       email: formData.email.trim(),
     });
 
@@ -69,7 +69,10 @@ const Register = () => {
     setMessage({ type: "", text: "" });
 
     try {
-      const res = await axios.post('/api/auth/register', formData);
+      const res = await axios.post(
+  "https://auth-system-i3cx.vercel.app/api/auth/register",
+  formData
+);
       setMessage({
         type: "success",
         text: res.data.message || "Registration successful! Redirecting...",
