@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import bgSvg from "../assets/gemini-svg.svg"; // Step up from src/pages to src/assets
 
 const Home = () => {
   const navigate = useNavigate();
@@ -12,20 +11,7 @@ const Home = () => {
   };
 
   return (
-    <div 
-      style={{
-        minHeight: "100vh",
-        width: "100vw",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundImage: `url(${bgSvg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
-      }}
-    >
+    
       <div className="auth-card">
         <h1 className="auth-title">Authentication System</h1>
 
@@ -65,7 +51,6 @@ const Home = () => {
           </>
         )}
       </div>
-    </div>
   );
 };
 
