@@ -28,4 +28,4 @@ export const forgotPassword = (data) =>
 export const resetPassword = (data) =>
   API.post("/reset-password", data);
 
-export default API;
+export default API; 
