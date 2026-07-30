@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 
+// Centralized API Base URL to avoid duplicate typos
+const BASE_URL = 'https://auth-system-i3cx.vercel.app/api/auth';
+
 export default function ForgotPassword() {
   const [step, setStep] = useState(1);
   const [email, setEmail] = useState('');
@@ -39,7 +42,8 @@ export default function ForgotPassword() {
     setMessage('');
 
     try {
-      const res = await axios.post('pf8e.vercel.app/api/auth/forgot-password', { email });
+      // ✅ Added https:// protocol prefix
+      const res = await axios.post(`${BASE_URL}/forgot-password`, { email });
       
       // Successfully sent OTP
       setMessage(res.data.message || 'OTP sent successfully!');
@@ -68,7 +72,7 @@ export default function ForgotPassword() {
     setMessage('');
 
     try {
-      const res = await axios.post('https://auth-system-i3cx.vercel.app/api/auth/reset-password', {
+      const res = await axios.post(`${BASE_URL}/reset-password`, {
         email,
         otp,
         newPassword,
@@ -77,7 +81,7 @@ export default function ForgotPassword() {
       setMessage(res.data.message || 'Password reset successful!');
 
       setTimeout(() => {
-        navigate('/Login');
+        navigate('/login');
       }, 2000);
     } catch (err) {
       console.error("Reset Password Error:", err.response?.data || err.message);
@@ -164,7 +168,7 @@ export default function ForgotPassword() {
       )}
 
       <div style={{ textAlign: 'right', marginTop: '15px' }}>
-        <Link to="/Login" style={{ color: '#0066cc', fontSize: '14px' }}>
+        <Link to="/login" style={{ color: '#0066cc', fontSize: '14px' }}>
           Back to Login
         </Link>
       </div>
