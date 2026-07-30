@@ -8,12 +8,14 @@ const app = express();
 
 app.use(express.json());
 
+import cors from "cors";
+
 app.use(
   cors({
     origin: [
       "http://localhost:5173",
       "http://127.0.0.1:5173",
-      "https://auth-system-pc1x.vercel.app"
+      "https://auth-system-ruddy-eight.vercel.app", // your current frontend
     ],
     credentials: true,
   })
