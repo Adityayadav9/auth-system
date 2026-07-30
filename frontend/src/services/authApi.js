@@ -7,16 +7,25 @@ const API = axios.create({
   },
 });
 
-export const registerUser = (data) => {
-  return API.post("/register", data);
-};
+// Register
+export const registerUser = (data) => API.post("/register", data);
 
-export const verifyOTP = (data) => {
-  return API.post("/verify-otp", data);
-};
+// Send OTP
+export const sendOTP = (data) => API.post("/send-otp", data);
 
-export const loginUser = (data) => {
-  return API.post("/login", data);
-};
+// Login
+export const loginWithPassword = (data) =>
+  API.post("/login-password", data);
+
+export const loginWithOTP = (data) =>
+  API.post("/login-otp", data);
+
+// Forgot Password
+export const forgotPassword = (data) =>
+  API.post("/forgot-password", data);
+
+// Reset Password
+export const resetPassword = (data) =>
+  API.post("/reset-password", data);
 
 export default API;
