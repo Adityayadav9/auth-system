@@ -69,7 +69,7 @@ const Login = () => {
       loginMethod === "password" ? { email, password } : { email, otp };
 
     try {
-      const res = await axios.post(endpoint, payload);
+const res = await axios.post(`${API}${endpoint}`, payload);
       setMessage({
         type: "success",
         text: "Login successful! Redirecting...",

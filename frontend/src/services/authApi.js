@@ -2,6 +2,9 @@ import axios from "axios";
 
 const API = axios.create({
   baseURL: "https://auth-system-i3cx.vercel.app/api/auth",
+  headers: {
+    "Content-Type": "application/json",
+  },
 });
 
 export const registerUser = (data) => {
