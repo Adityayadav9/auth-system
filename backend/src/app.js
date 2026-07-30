@@ -7,14 +7,28 @@ import userRoutes from "./routes/user.routes.js";
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "http://127.0.0.1:5173",
+      "https://auth-system-pc1x.vercel.app"
+    ],
+    credentials: true,
+  })
+);
+
 // app.use(helmet());
+
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
-app.get("/", (req, res) => {
-    console.log("GET / route hit");
-    res.send("Server is running 🚀");
-});
 
+app.get("/", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "Backend is running 🚀",
+  });
+});
 
 export default app;
