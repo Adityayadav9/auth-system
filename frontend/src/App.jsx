@@ -7,7 +7,7 @@ import Dashboard from "./pages/Dashboard";
 import ForgotPassword from "./pages/ForgotPassword";
 
 // Import your background image (Place your image file in src/assets/bg.jpg)
-import bgImage from "./assets/gemini-svg.svg";
+// import bgImage from "./assets/gemini-svg.svg";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
           justifyContent: "center",
           alignItems: "center",
           // Dark overlay + background image for better contrast
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${bgImage})`,
+          // backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${bgImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
